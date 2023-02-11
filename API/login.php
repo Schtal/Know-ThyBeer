@@ -1,19 +1,25 @@
 <?php
     
-    include "dbConnect.php";
-    $senha = "senha1234";
-    $email = "josedasilva@knowthybeer.com";
-    
-    $sql = "SELECT nome FROM Usuario WHERE email = '$email' AND senha = md5('$senha')";
-    $result = $conn->query($sql);
+    $data = array("nome" => "nome nome", "email" => $_POST["user"]);
+    // $tryLogin = logar($_POST["user"], $_POST["pass"]);
+    header("Content-Type: application/json");
+    echo json_encode($data);
+    exit();
 
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            echo "Name: " . $row["nome"];
+    include "dbConnect.php";
+    
+    function logar($email, $senha){
+        $sql = "SELECT nome FROM Usuario WHERE email = '$email' AND senha = md5('$senha')";
+        $result = $conn->query($sql);
+        $nome = false;
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                $nome = $row["nome"];
+            }
         }
-    } else {
-        echo "0 results";
+        return $nome;
     }
     
     $conn->close(); 

@@ -9,6 +9,17 @@ $(document).ready(function(){
 function login(user, pass){
     if (validaLogin(user, pass)) {
         console.log("vamos tentar logar");
+        $.ajax({
+            method: "POST",
+            url: "../API/login.php",
+            data: {
+                user: user, 
+                pass: pass
+            }
+        }).done(function(msg) {
+            console.log(msg);
+            console.log("estamos logando retorno");
+        });
     };
 }
 
