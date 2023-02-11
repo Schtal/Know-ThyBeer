@@ -1,14 +1,12 @@
 <?php
-    
-    $data = array("nome" => "nome nome", "email" => $_POST["user"]);
-    // $tryLogin = logar($_POST["user"], $_POST["pass"]);
+    include "dbConnect.php";
+
+    $data = array("nome" => logar($_POST["user"], $_POST["pass"], $conn), "email" => $_POST["user"]);
     header("Content-Type: application/json");
     echo json_encode($data);
-    exit();
 
-    include "dbConnect.php";
-    
-    function logar($email, $senha){
+    function logar($email, $senha, $conn){
+        
         $sql = "SELECT nome FROM Usuario WHERE email = '$email' AND senha = md5('$senha')";
         $result = $conn->query($sql);
         $nome = false;
@@ -20,8 +18,9 @@
             }
         }
         return $nome;
+        
     }
-    
     $conn->close(); 
     
+    exit();    
 ?>
