@@ -5,12 +5,14 @@ document.onreadystatechange = function () {
 
 
         btnEntrar.onclick = basicValidation();
+
+        function basicValidation() {
+            alert('here we go');
+        }
+    
     }
 
 
-    function basicValidation() {
-        
-    }
-
+   
 
 }
