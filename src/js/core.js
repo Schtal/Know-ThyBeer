@@ -16,9 +16,8 @@ function login(user, pass){
                 user: user, 
                 pass: pass
             }
-        }).done(function(msg) {
-            console.log(msg);
-            console.log("estamos logando retorno");
+        }).done(function(retorno) {
+            resolveLogin(retorno)
         });
     };
 }
@@ -26,13 +25,24 @@ function login(user, pass){
 function validaLogin(user, pass){
     $valido = false;
     if (user == "" || pass == "") {
-        console.log("um deles e vazio");
-        $("#erroLogin").removeClass("hidden");
+        loginInvalido();
     } else {
-        console.log("segue o jogo");
         $("#erroLogin").addClass("hidden");
         $valido = true;
     }
     return $valido;
 }
 
+function resolveLogin(login) {
+    console.log("resolve login");
+    console.log(login);
+    if (!login.nome) {
+        loginInvalido();
+        return;
+    }
+
+}
+
+function loginInvalido() {
+    $("#erroLogin").removeClass("hidden");
+}
