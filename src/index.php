@@ -23,6 +23,7 @@
                 <div class="row">
                     <label for="senha"> Senha </label>
                     <input type="password" name="senha" id="senha">
+                    <p class="error hidden">"Usuário e/ou senha inválidos!"</p>
                 </div>
 
                 <div class="row">
