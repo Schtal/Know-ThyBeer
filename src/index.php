@@ -18,6 +18,7 @@
                 <div class="row">
                     <label for="user"> User </label>
                     <input type="text" name="email" id="user">
+                  
                 </div>
 
                 <div class="row">
