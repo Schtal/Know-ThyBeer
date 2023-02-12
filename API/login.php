@@ -15,6 +15,8 @@
             // output data of each row
             while($row = $result->fetch_assoc()) {
                 $nome = $row["nome"];
+                session_start();
+                $_SESSION["user"] = $nome;
             }
         }
         return $nome;

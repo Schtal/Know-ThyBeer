@@ -14,26 +14,10 @@
 
     </head>
     <body>
-       
         <div class="container" id="main-content">
-            <form action="#" method="#">
-                <div class="row">
-                    <label for="user"> User </label>
-                    <input type="text" name="email" id="user">
-                  
-                </div>
-
-                <div class="row">
-                    <label for="senha"> Senha </label>
-                    <input type="password" name="senha" id="senha">
-                    <p class="error hidden" id="erroLogin">"Usuário e/ou senha inválidos!"</p>
-                </div>
-
-                <div class="row">
-                    <input type="submit" value="entrar" id="entrar"/>
-                </div>
-
-            </form>            
+            <div class="row">
+                <a href="javascript:void(0)" id="btnLogout"> Logout</a>
+            </div>
         </div>
     </body>
 </html>

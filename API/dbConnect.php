@@ -12,7 +12,5 @@
         die("Connection failed: " . mysqli_connect_error());
     }
     
-    function myQuery($sql) {
-        $conn->query($sql);
-    }  
+   
 ?>

@@ -4,6 +4,13 @@ $(document).ready(function(){
         console.log(event);
         login(event.currentTarget.form[0].value, event.currentTarget.form[1].value);
     });
+
+    $("#btnLogout").click(function(event){
+        event.preventDefault();
+        console.log("Clicou logout")
+        logout();
+        
+    })
 })
 
 function login(user, pass){
@@ -22,6 +29,16 @@ function login(user, pass){
     };
 }
 
+
+function logout() {
+    $.ajax({
+        method: "POST",
+        url: "../API/logout.php"      
+    }).done(function(retorno) {
+        window.location.href = "index.php"
+    });
+}
+
 function validaLogin(user, pass){
     $valido = false;
     if (user == "" || pass == "") {
@@ -34,12 +51,12 @@ function validaLogin(user, pass){
 }
 
 function resolveLogin(login) {
-    console.log("resolve login");
-    console.log(login);
     if (!login.nome) {
         loginInvalido();
         return;
     }
+
+    window.location.href = "search-by-beer.php";
 
 }
 
