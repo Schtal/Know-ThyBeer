@@ -11,6 +11,10 @@ $(document).ready(function(){
         logout();
         
     })
+
+    if ( !localStorage.getItem('loggedIn') && window.location.href.indexOf("index.php") < 1 ) {
+        window.location.href = "index.php"
+    } 
 })
 
 function login(user, pass){
@@ -35,6 +39,7 @@ function logout() {
         method: "POST",
         url: "../API/logout.php"      
     }).done(function(retorno) {
+        localStorage.removeItem('loggedIn');
         window.location.href = "index.php"
     });
 }
@@ -56,6 +61,7 @@ function resolveLogin(login) {
         return;
     }
 
+    localStorage.setItem('loggedIn', true);
     window.location.href = "search-by-beer.php";
 
 }
