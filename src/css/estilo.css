@@ -79,6 +79,7 @@ h3 {
     width: 100vw;
     height: 100vh;
     backdrop-filter: blur(2px);
+    z-index: 9999;
 }
 
 .loading-wrapper .loading {
@@ -90,11 +91,14 @@ h3 {
 
 /* index */
 #main-content {
-    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    
 }
 
 .content-wrapper {
     height: 100%!important;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -118,7 +122,7 @@ h3 {
 
 #footer-spacing {
     position: relative;
-    height: 50px;
+    height: 120px;
     
 }
 
@@ -194,10 +198,12 @@ h3 {
 
 #content-body{
     background: #FFF;
-    border-top-left-radius: 15%;
-    border-top-right-radius: 15%;
-    padding: 25px 8%;
-    overflow: hidden;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 25px 10%;
+    margin-top: 25px;
+    flex-grow: 1;
+    
 }
 
 
@@ -213,7 +219,7 @@ h3 {
     background: #fdba33;
     border: 1px solid #fdba33;
     border-radius: 10px;
-    margin: 10px;
+    margin: 10px 0;
 }
 
 #btn-main-cta {
@@ -232,4 +238,27 @@ h3 {
     top: -8px;
     bottom: 0;
 
+}
+
+#item-detail p, li {
+    font-size: 18px;
+    font-family: 'Roboto';
+    color: #412F00;
+}
+
+#item-descricao {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+#item-harmonizacao {
+    margin-top: 15px;
+}
+
+#item-detail ul {
+    list-style: circle; 
+}
+
+#item-detail ul li{
+    margin-bottom: 10px;
 }
