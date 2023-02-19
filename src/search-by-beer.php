@@ -35,12 +35,15 @@
                         <div class="row">
                             <div class="col" id="grid-selection">
                                 <div class="grid-item">
+                                    IPA
                                 </div>
 
                                 <div class="grid-item">
+                                    Stout
                                 </div>
 
                                 <div class="grid-item">
+                                    Red Ale
                                 </div>
 
                                 <div class="grid-item">

@@ -22,6 +22,8 @@ $(document).ready(function(){
     if ($("#user-name-screen").length > 0 && localStorage.getItem('username')) {
         $("#user-name-screen").text(localStorage.getItem("username"));
     }
+
+    buscaCervejas();
 })
 
 function login(user, pass){
@@ -78,4 +80,42 @@ function resolveLogin(login) {
 function loginInvalido() {
     $("#erroLogin").removeClass("hidden");
     $(".loading-wrapper").addClass("hidden");
+}
+
+
+function buscaCervejas() {
+    $.ajax({
+        method: "POST",
+        url: "../API/cervejas.php",
+        data: {
+            filtro: 'IPA'
+        }
+    }).done(function(retorno) {
+        getGrid(retorno);
+    });
+}
+
+
+function getSquare(row){
+    html = "<a class='ctaGrid' beerId=";
+    html += row.id;
+    html += ">"
+    html += " <div class='grid-item'>";
+    html += row.nome;
+    html += "</div> </a>";
+    return html;
+}
+
+
+function getGrid(cervejas){
+    html = "";
+    cervejas.forEach((element) => {
+        html += getSquare(element);
+    });
+    renderGrid(html);
+}
+
+
+function renderGrid(grid) {
+    $("#grid-selection").html(grid);
 }
