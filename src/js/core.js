@@ -2,6 +2,7 @@ $(document).ready(function(){
     $("#entrar").click(function(event){
         event.preventDefault();
         console.log(event);
+        $(".loading-wrapper").removeClass("hidden");
         login(event.currentTarget.form[0].value, event.currentTarget.form[1].value);
     });
 
@@ -12,9 +13,15 @@ $(document).ready(function(){
         
     })
 
-    if ( !localStorage.getItem('loggedIn') && window.location.href.indexOf("index.php") < 1 ) {
-        window.location.href = "index.php"
+    if ( !localStorage.getItem('loggedIn') && window.location.href.indexOf("login.php") < 1 ) {
+        window.location.href = "login.php"
     } 
+
+    console.log()
+
+    if ($("#user-name-screen").length > 0 && localStorage.getItem('username')) {
+        $("#user-name-screen").text(localStorage.getItem("username"));
+    }
 })
 
 function login(user, pass){
@@ -40,7 +47,7 @@ function logout() {
         url: "../API/logout.php"      
     }).done(function(retorno) {
         localStorage.removeItem('loggedIn');
-        window.location.href = "index.php"
+        window.location.href = "login.php"
     });
 }
 
@@ -57,15 +64,18 @@ function validaLogin(user, pass){
 
 function resolveLogin(login) {
     if (!login.nome) {
-        loginInvalido();
+        loginInvalido();        
         return;
     }
 
     localStorage.setItem('loggedIn', true);
+    localStorage.setItem('username', login.nome)
     window.location.href = "search-by-beer.php";
+    
 
 }
 
 function loginInvalido() {
     $("#erroLogin").removeClass("hidden");
+    $(".loading-wrapper").addClass("hidden");
 }

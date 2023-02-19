@@ -18,59 +18,37 @@
             <div class="h-100 content-wrapper">
                 <div class="row" id ="main-header">
                     <div class="col text-center">
-                        <h3>Olá <span id="user-name-screen"></span>!</h3>
-                        <p> Escolha o tipo de cerveja abaixo para receber opções de harmonização</p>
-                        <div id="menu">
-                            <a href="javascript:void(0)" id="btnLogout"> Logout</a>
-                        </div>                    
+                        <h3>Acessar</h3>
+                        <p> Informe usuario e senha</p>
+                                           
                     </div>
                 </div>
 
                 <div class="row" id="content-body">
                     <div class="col">
+                    <form action="#" method="#" class="basic-form">  
                         <div class="row">
-                            <div class="col"><h3> Escolha o tipo de cerveja</h3></div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col" id="grid-selection">
-                                <div class="grid-item">
+                                
+                                <div class="row">
+                                    <input type="text" name="email" id="user" placeholder="Email de Usuário">
                                 </div>
 
-                                <div class="grid-item">
+                                <div class="row">
+                                    <input type="password" name="senha" id="senha"  placeholder="Digite sua senha">
+                                    <p class="error hidden" id="erroLogin">"Usuário e/ou senha inválidos!"</p>
                                 </div>
+                                
+                            </div>
 
-                                <div class="grid-item">
-                                </div>
 
-                                <div class="grid-item">
-                                </div>
-
-                                <div class="grid-item">
-                                </div>
-
-                                <div class="grid-item">
-                                </div>
-
-                                <div class="grid-item">
-                                </div>
-
-                                <div class="grid-item">
-                                </div>
-
-                                <div class="grid-item">
+                            <div class="row">
+                                <div class="col">
+                                    <div id="main-box-cta">
+                                        <input tye="submit" class="btn btn1" id="entrar"  value="Acessar"/>                                                          
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <div class="row">
-                            <div class="col">
-                                <div id="main-box-cta">
-                                    <a id="btn-main-cta" class="btn btn1">Escolher pelo tipo de comida</a>                                
-                                </div>
-                            </div>
-                        </div>    
+                        </form>       
 
                         <div class="row">
                             <div class="col text-center">
@@ -81,6 +59,16 @@
                         </div>                                                   
                     </div>
                 </div>     
+            </div>
+        </div>
+
+
+       
+        <div class="loading-wrapper hidden">
+            <div class="d-flex justify-content-center loading">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
             </div>
         </div>
     </body>
