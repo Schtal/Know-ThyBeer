@@ -29,7 +29,7 @@
                 <div class="row" id="content-body">
                     <div class="col">
                         <div class="row">
-                            <div class="col"><h3> Cerveja IPA</h3></div>
+                            <div class="col"><h3 id='item-nome'> Cerveja IPA</h3></div>
                         </div>
                         
                         <div class="row">
@@ -87,6 +87,14 @@
                         </div>                                                   
                     </div>
                 </div>     
+            </div>
+        </div>
+
+        <div class="loading-wrapper hidden">
+            <div class="d-flex justify-content-center loading">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
             </div>
         </div>
     </body>

@@ -23,7 +23,16 @@ $(document).ready(function(){
         $("#user-name-screen").text(localStorage.getItem("username"));
     }
 
-    buscaCervejas();
+
+    if (window.location.href.indexOf("search-by-beer") > -1){
+        buscaCervejas();
+    }
+
+    if (window.location.href.indexOf("beer-detail") > -1){
+        $(".loading-wrapper").removeClass("hidden");
+        urlParam = new URLSearchParams(window.location.search);
+        getCervejaDetail(urlParam.get("id"));
+    }
 })
 
 function login(user, pass){
@@ -86,18 +95,46 @@ function loginInvalido() {
 function buscaCervejas() {
     $.ajax({
         method: "POST",
-        url: "../API/cervejas.php",
-        data: {
-            filtro: 'IPA'
-        }
+        url: "../API/cervejas.php"
     }).done(function(retorno) {
         getGrid(retorno);
     });
 }
 
 
+function getCervejaDetail(id) {
+    console.log(id);
+    $.ajax({
+        method: "POST",
+        url: "../API/cerveja-detail.php",
+        data: {
+            id: id
+        }
+    }).done(function(retorno){
+        replaceCervejaDetail(retorno);
+    });
+}
+
+
+function replaceCervejaDetail(cerveja) {
+    console.log(cerveja.cerveja.nome);
+    cerveja=cerveja.cerveja;
+    $("#item-nome").text(cerveja.nome);
+    $("#item-descricao p").text(cerveja.descricao);
+    $("#item-img img").attr("src", cerveja.foto);
+    lista = "";
+    cerveja.comida.forEach((element) => {
+        lista += "<li>"
+        lista += element
+        lista += "</li>"
+    })
+    $("#item-harmonizacao ul").html(lista);
+    $(".loading-wrapper").addClass("hidden");
+}
+
+
 function getSquare(row){
-    html = "<a class='ctaGrid' beerId=";
+    html = "<a class='ctaGrid' href=beer-detail.php?id=";
     html += row.id;
     html += ">"
     html += " <div class='grid-item'>";
