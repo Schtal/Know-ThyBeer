@@ -2,7 +2,7 @@ $(document).ready(function(){
     $("#entrar").click(function(event){
         event.preventDefault();
         console.log(event);
-        $(".loading-wrapper").removeClass("hidden");
+        pageIsLoading();
         login(event.currentTarget.form[0].value, event.currentTarget.form[1].value);
     });
 
@@ -17,8 +17,7 @@ $(document).ready(function(){
         window.location.href = "login.php"
     } 
 
-    console.log()
-
+    
     if ($("#user-name-screen").length > 0 && localStorage.getItem('username')) {
         $("#user-name-screen").text(localStorage.getItem("username"));
     }
@@ -29,7 +28,7 @@ $(document).ready(function(){
     }
 
     if (window.location.href.indexOf("beer-detail") > -1){
-        $(".loading-wrapper").removeClass("hidden");
+        pageIsLoading();
         urlParam = new URLSearchParams(window.location.search);
         getCervejaDetail(urlParam.get("id"));
     }
@@ -99,7 +98,7 @@ function resolveLogin(login) {
 
 function loginInvalido() {
     $("#erroLogin").removeClass("hidden");
-    $(".loading-wrapper").addClass("hidden");
+    pageIsLoaded();
 }
 
 
@@ -164,7 +163,7 @@ function replaceCervejaDetail(cerveja) {
         lista += "</li>"
     })
     $("#item-harmonizacao ul").html(lista);
-    $(".loading-wrapper").addClass("hidden");
+    pageIsLoaded();
 }
 
 
@@ -192,8 +191,18 @@ function getSquare(row, tipo){
     html += row.id;
     html += ">"
     html += " <div class='grid-item'>";
-    html += row.nome;
-    html += "</div> </a>";
+    html +=         "<div class='grid-img'>";
+    html +=             "<img src='img/cervejas/";
+    html +=                 typeof(row.image) != 'undefined' ? row.image : "exemplo.jpeg";
+    html +=              "'/>"
+    html +=         "</div>";
+    html +=         "<div class='grid-item-name'>";
+    html +=               row.nome;
+    html +=         "</div>";
+    html += "</div> ";
+    html += "</a>";
+
+    console.log(typeof(row.image))
     return html;
 }
 
@@ -206,7 +215,16 @@ function getGrid(elementos, tipo){
     renderGrid(html);
 }
 
-
 function renderGrid(grid) {
     $("#grid-selection").html(grid);
+}
+
+function pageIsLoading() {
+    $(".loading-wrapper").removeClass("hidden");
+}
+
+function pageIsLoaded() {
+    $(".loading-wrapper").addClass("hidden");
+    $(".skeleton-box").removeClass("skeleton-box");
+
 }
