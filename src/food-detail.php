@@ -73,7 +73,7 @@
                         <div class="row">
                             <div class="col">
                                 <div id="main-box-cta">
-                                    <a id="btn-main-cta" class="btn btn1">Escolher pelo tipo de cerveja</a>                                
+                                    <a id="btn-main-cta" href="http://localhost/Know-ThyBeer/src/search-by-beer.php" class="btn btn1">Escolher pelo tipo de cerveja</a>                                
                                 </div>
                             </div>
                         </div>    

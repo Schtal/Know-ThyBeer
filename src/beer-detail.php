@@ -68,7 +68,7 @@
                         <div class="row">
                             <div class="col">
                                 <div id="main-box-cta">
-                                    <a id="btn-main-cta" class="btn btn1">Escolher pelo tipo de comida</a>                                
+                                    <a id="btn-main-cta" href="http://localhost/Know-ThyBeer/src/search-by-food.php" class="btn btn1">Escolher pelo tipo de comida</a>                                
                                 </div>
                             </div>
                         </div>    
