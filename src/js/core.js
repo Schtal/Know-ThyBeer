@@ -33,6 +33,17 @@ $(document).ready(function(){
         urlParam = new URLSearchParams(window.location.search);
         getCervejaDetail(urlParam.get("id"));
     }
+
+
+    if (window.location.href.indexOf("search-by-food") > -1){
+        buscaComidas();
+    }
+
+    if (window.location.href.indexOf("food-detail") > -1){
+        $(".loading-wrapper").removeClass("hidden");
+        urlParam = new URLSearchParams(window.location.search);
+        getComidaDetail(urlParam.get("id"));
+    }
 })
 
 function login(user, pass){
@@ -97,7 +108,17 @@ function buscaCervejas() {
         method: "POST",
         url: "../API/cervejas.php"
     }).done(function(retorno) {
-        getGrid(retorno);
+        getGrid(retorno, "beer");
+    });
+}
+
+
+function buscaComidas() {
+    $.ajax({
+        method: "POST",
+        url: "../API/comidas.php"
+    }).done(function(retorno) {
+        getGrid(retorno, "food");
     });
 }
 
@@ -112,6 +133,20 @@ function getCervejaDetail(id) {
         }
     }).done(function(retorno){
         replaceCervejaDetail(retorno);
+    });
+}
+
+
+function getComidaDetail(id) {
+    console.log(id);
+    $.ajax({
+        method: "POST",
+        url: "../API/comida-detail.php",
+        data: {
+            id: id
+        }
+    }).done(function(retorno){
+        replaceComidaDetail(retorno);
     });
 }
 
@@ -133,8 +168,27 @@ function replaceCervejaDetail(cerveja) {
 }
 
 
-function getSquare(row){
-    html = "<a class='ctaGrid' href=beer-detail.php?id=";
+function replaceComidaDetail(comida) {
+    console.log(comida.comida.nome);
+    comida=comida.comida;
+    $("#item-nome").text(comida.nome);
+    $("#item-descricao p").text(comida.descricao);
+    $("#item-img img").attr("src", comida.foto);
+    lista = "";
+    comida.cerveja.forEach((element) => {
+        lista += "<li>"
+        lista += element
+        lista += "</li>"
+    })
+    $("#item-harmonizacao ul").html(lista);
+    $(".loading-wrapper").addClass("hidden");
+}
+
+
+function getSquare(row, tipo){
+    html = "<a class='ctaGrid' href=";
+    html += tipo;
+    html += "-detail.php?id=";
     html += row.id;
     html += ">"
     html += " <div class='grid-item'>";
@@ -144,10 +198,10 @@ function getSquare(row){
 }
 
 
-function getGrid(cervejas){
+function getGrid(elementos, tipo){
     html = "";
-    cervejas.forEach((element) => {
-        html += getSquare(element);
+    elementos.forEach((element) => {
+        html += getSquare(element, tipo);
     });
     renderGrid(html);
 }

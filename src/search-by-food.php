@@ -19,7 +19,7 @@
                 <div class="row" id ="main-header">
                     <div class="col text-center">
                         <h3>Olá <span id="user-name-screen"></span>!</h3>
-                        <p> Escolha o tipo de cerveja abaixo para receber opções de harmonização</p>
+                        <p> Escolha o tipo de comida abaixo para receber opções de harmonização</p>
                         <div id="menu">
                             <a href="javascript:void(0)" id="btnLogout"> Logout</a>
                         </div>                    
@@ -29,21 +29,18 @@
                 <div class="row" id="content-body">
                     <div class="col">
                         <div class="row">
-                            <div class="col"><h3> Escolha o tipo de cerveja</h3></div>
+                            <div class="col"><h3> Escolha o tipo de comida</h3></div>
                         </div>
                         
                         <div class="row">
                             <div class="col" id="grid-selection">
                                 <div class="grid-item">
-                                    IPA
                                 </div>
 
                                 <div class="grid-item">
-                                    Stout
                                 </div>
 
                                 <div class="grid-item">
-                                    Red Ale
                                 </div>
 
                                 <div class="grid-item">
@@ -70,7 +67,7 @@
                         <div class="row">
                             <div class="col">
                                 <div id="main-box-cta">
-                                    <a id="btn-main-cta" href="http://localhost/Know-ThyBeer/src/search-by-food.php" class="btn btn1">Escolher pelo tipo de comida</a>                                
+                                    <a id="btn-main-cta"  href="http://localhost/Know-ThyBeer/src/search-by-beer.php" class="btn btn1">Escolher pelo tipo de cerveja</a>                                
                                 </div>
                             </div>
                         </div>    
