@@ -180,7 +180,7 @@ function replaceComidaDetail(comida) {
         lista += "</li>"
     })
     $("#item-harmonizacao ul").html(lista);
-    $(".loading-wrapper").addClass("hidden");
+    pageIsLoaded();
 }
 
 

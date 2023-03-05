@@ -29,7 +29,7 @@
                 <div class="row" id="content-body">
                     <div class="col">
                         <div class="row">
-                            <div class="col"><h3 id='item-nome'> Frango</h3></div>
+                            <div class="col"><h3 id='item-nome' class="skeleton-box"> </h3></div>
                         </div>
                         
                         <div class="row">
@@ -40,29 +40,23 @@
                                     </div>
 
                                     <div class="col-sm-12 col-md4" id="item-descricao">
-                                        <h3> Descrição:</h3>
-                                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                            Etiam vel commodo nisi. Etiam id turpis a tortor accumsan dapibus eu vitae neque. 
-                                            Curabitur laoreet facilisis nisi. Morbi vulputate egestas tortor. 
-                                            Nulla vestibulum dui non pulvinar convallis. 
-                                            Nam lacinia, velit sit amet condimentum sollicitudin, felis eros sodales felis, a tincidunt purus mauris non lorem. 
-                                            Mauris sit amet volutpat nulla, at ullamcorper nisl. Quisque sapien diam, efficitur a tempus eu, interdum id diam. 
-                                            Sed feugiat, libero non consectetur efficitur, eros mauris ullamcorper purus, vitae iaculis ligula tellus sed orci.
+                                        <h3 class="skeleton-box"></h3>
+                                        <p class="skeleton-box"> 
                                         </p>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-sm-12" id="item-harmonizacao">
-                                        <h3> Harmonização</h3>
-                                        <ul>
-                                            <li>lorem ipsum dolor sit amet, consectetur adipiscing elit. </li>
-                                            <li>Etiam vel commodo nisi. Etiam id turpis a tortor accumsan dapibus eu vitae neque. </li>
-                                            <li>Curabitur laoreet facilisis nisi. Morbi vulputate egestas tortor. </li>
-                                            <li>Nulla vestibulum dui non pulvinar convallis. </li>
-                                            <li>Nam lacinia, velit sit amet condimentum sollicitudin, felis eros sodales felis, a tincidunt purus mauris non lorem. </li>
-                                            <li>Mauris sit amet volutpat nulla, at ullamcorper nisl. Quisque sapien diam, efficitur a tempus eu, interdum id diam. </li>
-                                            <li>Sed feugiat, libero non consectetur efficitur, eros mauris ullamcorper purus, vitae iaculis ligula tellus sed orci.</li>
+                                        <h3 class="skeleton-box"> </h3>
+                                        <ul class="skeleton-box">
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
                                         </ul>
                                     </div>
                                 </div>

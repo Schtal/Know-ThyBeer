@@ -34,31 +34,56 @@
                         
                         <div class="row">
                             <div class="col" id="grid-selection">
-                                <div class="grid-item">
+                            <div class="grid-item">
+                                    <div class="grid-img-box skeleton-box"></div>
+                                    <div class="grid-item-name skeleton-box"></div>
+                                    
                                 </div>
+                                
+                                <div class="grid-item">
+                                    <div class="grid-img-box skeleton-box"></div>
+                                    <div class="grid-item-name skeleton-box"></div>
+                                    
+                                </div>
+                                
+                                <div class="grid-item">
+                                    <div class="grid-img-box skeleton-box"></div>
+                                    <div class="grid-item-name skeleton-box"></div>
+                                    
+                                </div>                                
 
                                 <div class="grid-item">
+                                    <div class="grid-img-box skeleton-box"></div>
+                                    <div class="grid-item-name skeleton-box"></div>
+                                    
                                 </div>
+                                
+                                
+                                <div class="grid-item">
+                                    <div class="grid-img-box skeleton-box"></div>
+                                    <div class="grid-item-name skeleton-box"></div>
+                                    
+                                </div>
+                                
+                                
 
                                 <div class="grid-item">
+                                    <div class="grid-img-box skeleton-box"></div>
+                                    <div class="grid-item-name skeleton-box"></div>
+                                    
                                 </div>
-
+                                
+                                
                                 <div class="grid-item">
+                                    <div class="grid-img-box skeleton-box"></div>
+                                    <div class="grid-item-name skeleton-box"></div>
+                                    
                                 </div>
-
+                                
                                 <div class="grid-item">
-                                </div>
-
-                                <div class="grid-item">
-                                </div>
-
-                                <div class="grid-item">
-                                </div>
-
-                                <div class="grid-item">
-                                </div>
-
-                                <div class="grid-item">
+                                    <div class="grid-img-box skeleton-box"></div>
+                                    <div class="grid-item-name skeleton-box"></div>
+                                    
                                 </div>
                             </div>
                         </div>
