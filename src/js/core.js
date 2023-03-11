@@ -172,7 +172,7 @@ function replaceComidaDetail(comida) {
     comida=comida.comida;
     $("#item-nome").text(comida.nome);
     $("#item-descricao p").text(comida.descricao);
-    $("#item-img img").attr("src", comida.foto);
+    $("#item-img img").attr("src", "img/food/"+comida.foto);
     lista = "";
     comida.cerveja.forEach((element) => {
         lista += "<li>"
@@ -192,7 +192,7 @@ function getSquare(row, tipo){
     html += ">"
     html += " <div class='grid-item'>";
     html +=         "<div class='grid-img'>";
-    html +=             "<img src='img/beer/";
+    html +=             "<img src='img/"+tipo+"/";
     html +=                 typeof(row.foto) != 'undefined' ? row.foto : "exemplo.jpeg";
     html +=              "'/>"
     html +=         "</div>";
