@@ -43,6 +43,11 @@ $(document).ready(function(){
         urlParam = new URLSearchParams(window.location.search);
         getComidaDetail(urlParam.get("id"));
     }
+
+     $("#toggle-menu").click(function(){
+        $("#menu-wrapper").toggleClass("open")
+        $("#toggle-menu").toggleClass("open")
+     })
 })
 
 function login(user, pass){

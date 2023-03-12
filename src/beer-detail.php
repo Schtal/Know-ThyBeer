@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
         <link href="css/estilo.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/0ea7e24e69.js" crossorigin="anonymous"></script>
         <script src="js/core.js" type="text/javascript"></script>
 
     </head>
@@ -17,12 +19,19 @@
         <div class="container-fluid background-yellow" id="main-content">
             <div class="h-100 content-wrapper">
                 <div class="row" id ="main-header">
-                    <div class="col text-center">
+                    <div class="col">
+                        <i class="fa-solid fa-bars" id="toggle-menu"></i>
                         <h3>Olá <span id="user-name-screen"></span>!</h3>
                         <p> Escolha o tipo de cerveja abaixo para receber opções de harmonização</p>
-                        <div id="menu">
-                            <a href="javascript:void(0)" id="btnLogout"> Logout</a>
-                        </div>                    
+                        <div id="menu-wrapper">
+                            <div id="menu">
+                                <ul>
+                                    <li><a href="search-by-beer.php"> Procurar combinações para Cerveja</a></li>
+                                    <li><a href="search-by-food.php"> Procurar combinações para Comida</a></li>
+                                    <li><a href="javascript:void(0)" id="btnLogout"> Logout</a></li>
+                                </ul>
+                            </div>                    
+                        </div>                 
                     </div>
                 </div>
 
