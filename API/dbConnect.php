@@ -1,8 +1,17 @@
 <?php
+    //for local use this
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbName = "knowthybeer";
+
+    //this below for "live"
+    /*
     $servername = "sql10.freemysqlhosting.net";
     $username = "sql10603066";
     $password = "ybLRd9uSVE";
     $dbName = "sql10603066";
+    */
 
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbName);

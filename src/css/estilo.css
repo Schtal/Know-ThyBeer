@@ -4,6 +4,7 @@
 /*  FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
 
+
 /* General */
 .hidden {
     display: none;
@@ -61,6 +62,25 @@ h3 {
     text-align: center;
     margin-bottom: 15px;
 }
+
+h4 {
+    font-weight: 600;
+    font-size: 18px;
+    font-family: 'Poppins';
+    color: #412F00; 
+}
+
+a.h5 {
+    font-weight: bold;
+    font-size: 12px;
+    font-family: 'Poppins';
+    color: #b9851b;
+    margin-top: 10px;
+    display: block; 
+    
+}
+
+
 
 #slogan {
     font-family: 'Poppins';
@@ -190,6 +210,15 @@ h3 {
     border-radius: 50%;
 }
 
+#favorito {
+    text-decoration: none;
+    color: #CCC;
+}
+
+#favorito.checked {
+    text-decoration: none;
+    color: #fdba33;
+}
 
 #login-box {
     background: #fdba33;
@@ -237,9 +266,103 @@ h3 {
   ::placeholder {
     color: #A3A3A3;
   }
+/*HEADER*/
+#search-col {
+    display: flex;
+    justify-content: center;
+    align-content: unset;
+    align-items: center;
+}
+#search-col form {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#search-input {
+    background: #efd79d;
+    box-shadow: none;
+    border: none;
+    color: #9e731c;
+    border-bottom: 2px solid #9e731c;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#search-submit {
+    background: #9e731c;
+    box-shadow: none;
+    border: none;
+    color: #efd79d;
+    border: 2px solid #9e731c;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+#search-result {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #FFF;
+    z-index: 9999;
+    padding: 30px;
+}
+
+#search-result-wrapper{
+    position: absolute;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    
+}
+
+#search-result-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 9998;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+
+#search-result-close {
+    padding: 30px 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#search-result-close-button {
+    font-size: 30px;
+}
+
+.search-item img {
+    max-height: 50px;
+    max-width: 100%;
+}
 
 
+.search-item {
+    padding: 25px 0;
+    border-top: 1px solid #b9851b;
+    border-bottom: 1px solid #fdba33;
+}
 
+
+.search-item:last-child{
+    border-bottom: none;
+}
+
+
+.search-item:first-child{
+    border-top: none;
+}
 /* Main content*/
 
 #main-header h3 {
@@ -332,6 +455,7 @@ h3 {
     margin-top: 15px;
 }
 
+
 #item-harmonizacao {
     margin-top: 15px;
 }
@@ -342,6 +466,38 @@ h3 {
 
 #item-detail ul li{
     margin-bottom: 10px;
+}
+
+
+/* PERFIL */
+
+
+.favorite_section {
+    margin: 10px 0 ;
+}
+
+.favorite_section img {
+    max-width: 100%;
+}
+
+.favorite_section .favorite_item {
+    padding: 25px 0;
+    border-bottom: 1px solid #fdba33;
+}
+
+
+.favorite_section .favorite_item:last-child{
+    border-bottom: none;
+}
+
+
+
+
+#section_cervejas h3, #section_comidas h3 {
+    margin: 0px;
+        border-bottom: 3px dashed #9e7307;
+    padding: 30px 0;
+    
 }
 
 

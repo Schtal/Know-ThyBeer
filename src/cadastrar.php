@@ -19,8 +19,8 @@
             <div class="h-100 content-wrapper">
                 <div class="row" id ="main-header">
                     <div class="col text-center">
-                        <h3>Acessar</h3>
-                        <p> Informe usuario e senha</p>
+                        <h3>Cadastro</h3>
+                        <p> Preencha os dados abaixo. Todos os campos são obrigatórios</p>
                                            
                     </div>
                 </div>
@@ -31,32 +31,45 @@
                         <div class="row">
                                 
                                 <div class="row">
-                                    <input type="text" name="email" id="user" placeholder="Email de Usuário">
+                                    <input type="text" name="email" id="user" req="1" placeholder="Email de Usuário">
+                                    <p class="error hidden req"> O campo não pode ser vazio</p>
+                                    <p class="error hidden noEmail">O valor informado não parece ser um e-mail</p>
                                 </div>
 
                                 <div class="row">
-                                    <input type="password" name="senha" id="senha"  placeholder="Digite sua senha">
-                                    <p class="error hidden" id="erroLogin">"Usuário e/ou senha inválidos!"</p>
+                                    <input type="text" name="nome" id="nome" req="1" placeholder="nome">
+                                    <p class="error hidden req">O campo não pode ser vazio</p>
+                                </div>
+
+                                <div class="row">
+                                    <input type="password" name="senha" id="senha" req="1" placeholder="Digite sua senha">
+                                    <p class="error hidden req">O campo não pode ser vazio</p>
+                                    <p class="error hidden notSecure"> A senha precisa ser pelo menos 6 caracteres e conter ao menos um dígito e uma letra</p>
                                 </div>
                                 
+
+                                <div class="row">
+                                    <input type="password" name="repSenha" id="repSenha" req="1"  placeholder="Repita sua senha">
+                                    <p class="error hidden req">O campo não pode ser vazio</p>
+                                    <p class="error hidden notMatch"> As senhas não são idênticas</p>
+                                    
+
+                                </div>
+
+                                <div class="row">
+                                    <p class="error hidden alreadyRegistered"> Este usuário já está cadastrado.</p> 
+                                </div>
                             </div>
 
 
                             <div class="row">
                                 <div class="col">
                                     <div id="main-box-cta">
-                                        <input tye="submit" class="btn btn1" id="entrar"  value="Acessar"/>                                                          
+                                        <input tye="submit" class="btn btn1" id="cadastrar"  value="Cadastrar"/>                                                          
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col">
-                                    <div id="main-box-cta">
-                                        <a class="btn btn1" href="cadastrar.php"> Cadastrar </a>                                                       
-                                    </div>
-                                </div>
-                            </div>
                         </form>       
 
                         <div class="row">
