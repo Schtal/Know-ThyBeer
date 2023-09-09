@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.7.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Sep 09, 2023 at 05:36 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Host: sql10.freemysqlhosting.net
+-- Generation Time: Mar 12, 2023 at 08:11 AM
+-- Server version: 5.5.62-0ubuntu0.14.04.1
+-- PHP Version: 7.0.33-0ubuntu0.16.04.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,8 +19,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `knowthybeer`
+-- Database: `sql10603066`
 --
+CREATE DATABASE IF NOT EXISTS `sql10603066` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `sql10603066`;
 
 -- --------------------------------------------------------
 
@@ -30,7 +33,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `Cerveja` (
   `id` int(10) UNSIGNED NOT NULL,
   `nome` char(50) NOT NULL,
-  `descricao` text DEFAULT NULL,
+  `descricao` text,
   `foto` char(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -147,7 +150,7 @@ INSERT INTO `Cerveja_Comida` (`id`, `cerveja_id`, `comida_id`) VALUES
 CREATE TABLE `Comida` (
   `id` int(10) UNSIGNED NOT NULL,
   `nome` char(50) NOT NULL,
-  `descricao` text DEFAULT NULL,
+  `descricao` text,
   `foto` char(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -182,53 +185,6 @@ INSERT INTO `Comida` (`id`, `nome`, `descricao`, `foto`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `favorito_usuario_cerveja`
---
-
-CREATE TABLE `favorito_usuario_cerveja` (
-  `id` int(11) NOT NULL,
-  `usuario` int(11) NOT NULL,
-  `cerveja` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `favorito_usuario_cerveja`
---
-
-INSERT INTO `favorito_usuario_cerveja` (`id`, `usuario`, `cerveja`) VALUES
-(6, 1, 4),
-(8, 1, 5),
-(10, 1, 2),
-(11, 56, 13),
-(12, 60, 6),
-(13, 60, 1),
-(14, 60, 12),
-(15, 60, 2);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `favorito_usuario_comida`
---
-
-CREATE TABLE `favorito_usuario_comida` (
-  `id` int(11) NOT NULL,
-  `usuario` int(11) NOT NULL,
-  `comida` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `favorito_usuario_comida`
---
-
-INSERT INTO `favorito_usuario_comida` (`id`, `usuario`, `comida`) VALUES
-(4, 1, 2),
-(7, 60, 6),
-(8, 60, 16);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `Usuario`
 --
 
@@ -236,31 +192,15 @@ CREATE TABLE `Usuario` (
   `id` int(10) UNSIGNED NOT NULL,
   `nome` char(50) NOT NULL,
   `email` char(50) NOT NULL,
-  `senha` char(50) NOT NULL,
-  `active` tinyint(1) NOT NULL,
-  `activation_code` varchar(50) NOT NULL
+  `senha` char(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Usuario`
 --
 
-INSERT INTO `Usuario` (`id`, `nome`, `email`, `senha`, `active`, `activation_code`) VALUES
-(1, 'Jose da Silva', 'josedasilva@knowthybeer.com', '732002cec7aeb7987bde842b9e00ee3b', 1, ''),
-(41, 'teste', 'asdas@asdasd.com', '09151a42659cfc08aff86820f973f640', 0, ''),
-(43, 'teste', 'aaaaa@aaaaa.com', '09151a42659cfc08aff86820f973f640', 0, ''),
-(46, 'teste', 'asdas@asda.com', '09151a42659cfc08aff86820f973f640', 0, ''),
-(48, 'teste1234', 'asdas@asdasasdasd.com', '09151a42659cfc08aff86820f973f640', 0, ''),
-(50, 'teste1234', 'asdasdasdasdsa@asdas.com', '09151a42659cfc08aff86820f973f640', 0, ''),
-(52, 'Asdas', 'pasdpasdpa@asdasd.com', 'aa1bf4646de67fd9086cf6c79007026c', 0, 'b2f5ff47436671b6e533d8dc3614845d'),
-(53, 'Asdas', 'pasdasdasdpasdpa@asdasd.com', 'aa1bf4646de67fd9086cf6c79007026c', 0, 'dfcf28d0734569a6a693bc8194de62bf'),
-(54, 'Asdas', 'pasdasdasdasdpasdpa@asdasd.com', 'aa1bf4646de67fd9086cf6c79007026c', 0, '4c614360da93c0a041b22e537de151eb'),
-(55, 'Teste', 'teste@teste.com', '2065735a281f6483989a046af091dbd0', 1, '2510c39011c5be704182423e3a695e91'),
-(56, 'Marina', 'marina@marina.com', '65fe99e9e9ec6ff7c72111437d414c17', 1, '415290769594460e2e485922904f345d'),
-(57, 'asda', 'asdasd@asasd.com', '3bc267e58a5629c35df7da6ce59cebe1', 1, 'e1e1d3d40573127e9ee0480caf1283d6'),
-(58, 'asasd', 'asdasasdsa@asdasm.com', '3bc267e58a5629c35df7da6ce59cebe1', 1, 'c4ca4238a0b923820dcc509a6f75849b'),
-(59, 'asd', 'asdasdasasdasqweqw@asdasd.com', '3bc267e58a5629c35df7da6ce59cebe1', 1, '9dd4e461268c8034f5c8564e155c67a6'),
-(60, 'Abacate', 'abacate@abacate.com', '1a6d34ce8045798bf8f4ce6d52806fcb', 1, '4b43b0aee35624cd95b910189b3dc231');
+INSERT INTO `Usuario` (`id`, `nome`, `email`, `senha`) VALUES
+(1, 'Jose da Silva', 'josedasilva@knowthybeer.com', '732002cec7aeb7987bde842b9e00ee3b');
 
 --
 -- Indexes for dumped tables
@@ -288,24 +228,10 @@ ALTER TABLE `Comida`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `favorito_usuario_cerveja`
---
-ALTER TABLE `favorito_usuario_cerveja`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `favorito_usuario_comida`
---
-ALTER TABLE `favorito_usuario_comida`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `Usuario`
 --
 ALTER TABLE `Usuario`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -316,37 +242,21 @@ ALTER TABLE `Usuario`
 --
 ALTER TABLE `Cerveja`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
 --
 -- AUTO_INCREMENT for table `Cerveja_Comida`
 --
 ALTER TABLE `Cerveja_Comida`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
-
 --
 -- AUTO_INCREMENT for table `Comida`
 --
 ALTER TABLE `Comida`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
---
--- AUTO_INCREMENT for table `favorito_usuario_cerveja`
---
-ALTER TABLE `favorito_usuario_cerveja`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT for table `favorito_usuario_comida`
---
-ALTER TABLE `favorito_usuario_comida`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
 -- AUTO_INCREMENT for table `Usuario`
 --
 ALTER TABLE `Usuario`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --

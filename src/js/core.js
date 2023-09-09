@@ -254,7 +254,7 @@ function renderizaSearch(items) {
             html +=         '</div>'
             html +=         '<div class="col">'
             html +=             '<h4>'+item.nome+'</h4>'
-            html +=             '<a class="h5" href="'+item.tipi+'-detail.php?id='+item.id+'"> Veja mais detalhes</a>'
+            html +=             '<a class="h5" href="'+item.tipo+'-detail.php?id='+item.id+'"> Veja mais detalhes</a>'
             html +=         '</div>'
             html +='    </div>'
             html +='</div>'

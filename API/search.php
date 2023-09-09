@@ -7,7 +7,7 @@
     
     
     function search($term, $conn) {
-        $sql = "SELECT * FROM Cerveja  WHERE descricao LIKE '%$term%'";
+        $sql = "SELECT * FROM Cerveja  WHERE descricao LIKE '%$term%' OR nome LIKE '%$term%'";
         $result = $conn->query($sql);
         $busca = array();
         
@@ -23,7 +23,7 @@
         } 
 
 
-        $sql = "SELECT * FROM Comida  WHERE descricao LIKE '%$term%'";
+        $sql = "SELECT * FROM Comida  WHERE descricao LIKE '%$term%' OR nome LIKE '%$term%' ";
         $result = $conn->query($sql);
                
 
