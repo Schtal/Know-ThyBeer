@@ -247,17 +247,17 @@ function renderizaSearch(items) {
     
     if(items.length > 0 ) {
         items.forEach((item) => {
-            html += '<div class="col-md-6 col-xs-12 search-item">'
+            html += '<a  href="'+item.tipo+'-detail.php?id='+item.id+'"> <div class="col-md-6 col-xs-12 search-item">'
             html +=     '<div class="row">'
             html +=         '<div class="col-3">'
             html +=             '<img src="img/'+item.tipo+'/'+item.foto+'">'
             html +=         '</div>'
             html +=         '<div class="col">'
             html +=             '<h4>'+item.nome+'</h4>'
-            html +=             '<a class="h5" href="'+item.tipo+'-detail.php?id='+item.id+'"> Veja mais detalhes</a>'
+            html +=             '<span class="h5"> Veja mais detalhes</span>'
             html +=         '</div>'
             html +='    </div>'
-            html +='</div>'
+            html +='</div></a>'
         })
     } else {
         html += '<div class="col-md-6 col-xs-12 search-item">'
@@ -477,17 +477,17 @@ function getNoFavoritedItems() {
 
 function renderFavoritoItems(element, tipo) {
     html="";
-    html += '<div class="col-md-6 col-xs-12 favorite_item">'
+    html += '<a class="h5" href="'+tipo+'-detail.php?id='+element.id+'"> <div class="col-md-6 col-xs-12 favorite_item">'
     html +=     '<div class="row">'
     html +=         '<div class="col-3">'
     html +=             '<img src="img/'+tipo+'/'+element.foto+'">'
     html +=         '</div>'
     html +=         '<div class="col">'
     html +=             '<h4>'+element.nome+'</h4>'
-    html +=             '<a class="h5" href="'+tipo+'-detail.php?id='+element.id+'"> Veja mais detalhes</a>'
+    html +=             '<span class="h5"> Veja mais detalhes</span>'
     html +=         '</div>'
     html +='    </div>'
-    html +='</div>'
+    html +='</div></a>'
 
 
 
