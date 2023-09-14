@@ -1,17 +1,23 @@
 <?php
+    //Select environment
+    $environment = "live"; //live or local
+    
     //for local use this
     $servername = "localhost";
     $username = "root";
     $password = "";
     $dbName = "knowthybeer";
+    $environment = "live";
 
+    if ($environment == "live") {
     //this below for "live"
-    /*
-    $servername = "sql10.freemysqlhosting.net";
-    $username = "sql10603066";
-    $password = "ybLRd9uSVE";
-    $dbName = "sql10603066";
-    */
+    
+        $servername = "sql11.freemysqlhosting.net";
+        $username = "sql11646456";
+        $password = "86KAhIfP1V";
+        $dbName = "sql11646456";
+    
+    }
 
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbName);
